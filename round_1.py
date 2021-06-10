@@ -21,7 +21,25 @@ def start_game():
     choice = input()
 
     if '1' in choice:
-        print('You win')
+        print('You approach the side and see a window. You try and open it, but it appears to be locked. You look around for anything to help and you see a brick laying on the ground. You figure you have only 2 options.\n What do you do?\n 1. Pick up the brick and throw it through the window.\n 2. Try and pick the lock and open the window.')
+
+        choice = input()
+
+        if '1' in choice:
+            print("You pick up the brick and hurl it with all your might through the window. As soon as the glass breaks, you hear a loud alarm go off. In an instance, you are swarmed by a SWAT team and forced to the ground. Have they just been waiting behind the building waiting for someone to try this? Their response time was impeccable. They put you in handcuffs and off to prison you go.")
+            game_over()
+
+        elif '2' in input:
+            print("You approach the window and see a lockpick set laying on the sill. What a lucky break to advance the story! You pick it up and with nimble fingers and dexterity you never knew you had, you manage to get the window unlocked and open. You crawl your way in and see you're in a dark room. As your vision adjusts to the low light, you see a desk in front of you. On the desk there seems to be a stack of papers. When you look at the top page, it looks like you found the answer to the written driver's test! What a miracle! You scan the pages quickly and are able to retain all the information with your photo memory which seems like another convenient plot device. As you finish reading it, you hear the door begin to open! Do you\n 1. Hide under the desk\n 2. Stand firm and see what happens")
+
+            choice = input()
+
+            if '1' in choice:
+                print("Too late! The door opens as a woman sees you in the middle of the room. 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Now head outside for the driving portion of the test.")
+
+            elif '2' in choice:
+                print("The door opens as a woman sees you in the middle of the room. Before you can act, she says 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Now head outside for the driving portion of the test.")
+
     elif '2' in choice:
         print('You win')
     elif '3' in choice:
@@ -37,7 +55,7 @@ def start_game():
 
             choice = input()
             if '2' in choice:
-                 print("Great job! You passed! Please go outside to meet your instructor.")
+                 print("Great job! You passed! Now go outside for the driving portion of the test.")
             else:
                 print("Come on, this is basic knowledge anyone should know.")
                 game_over()
