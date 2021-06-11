@@ -20,13 +20,13 @@ def select_car():
     Okay, then! Now you have to do something really cool.
     You can choose your car!
     Choose your car:
-    1.Porshe, 2.URAL, 3.Tandem bicycle
+    1.Porshe, 2.BW1918, 3.Tandem bicycle
     ''')
 
     if result == "1":
         print("What can I say. You have an expensive taste. Good work")
     elif result == "2":
-        print("Wow! You have a little Russian in you.Good luck driving it")
+        print("Wow! I don't know what to say. Good luck with it")
     elif result == "3":
         print("What did you come to get again? Bicycle lessons? Get out of here.It is GAME OVER for you")
         game_over()
@@ -59,13 +59,52 @@ def make_a_joke():
       2. You can roll down your window,
       3.Just ignor it''')
 
-     # if result == "1":
-     #        print("")
-     # elif result == "2":
-     #        print("")
-     # elif result == "3":
-     #        print("")
+    if result == "1":
+        print("That was BAD! You just made the situation worse...Examiner blocked the windows and now you have to drive in this smelly car")
+    elif result == "2":
+        print("Passive aggressive action. Nice! Now we know what kind of person you are")
+    elif result == "3":
+            print("Best thing you could possibly do. GOOD JOB. You got some more \"I like you\" points from examiner")
 
+    first_light()
+
+def first_light():
+    result = input('''Good.
+     Now you are finally driving.
+     Your first task is red light.
+     What can possibly go wrong, right?
+     Well...Surprise! You can see the red light, and you are about to stop.
+     BUT! Right across the street you can see Leonardo Dicaprio.
+     OH! That is just crazy! What you do?
+     1.You don't who he is and just stop at the red light
+     2.You hit gas and you skip the red light to say hi to Leonardo Dicaprio because you a BIG fan
+     3.You open a door of your car and just run to him with open arms
+     4.You are being passiont. You just wait until green light and then you drive to Leonardo''')
+
+    if result == "1":
+         print("WHAT? How? WHAT? Okay, this is just ridiculous! GAME OVER just from me")
+         game_over()
+    elif result == "2":
+        print("Okay, it wasn't the best choice because you ran over a grandma who was crossing the road. Too much... Sorry. GAME OVER")
+        game_over()
+    elif result == "3":
+        print("interesting. You left your instructor alone in the car. BUT! Do you remember that your examiner is an interestingman? Because something crazy happened. He ran to hug Leo with you. After hugging Leo, you just went back to the car with big smiles. Good work")
+    elif result == "4":
+        print("Well. That is a good decision but you miss Leo and now you are sad. Anyway, you pass")
+
+    stop_at_the_bus_station()
+
+def stop_at_the_bus_station():
+    result = input('''You are driving by a bus station and your examiner asks you to stop there. Your action?
+    1. You do stop
+    2. You don't stop
+    ''')
+
+    if result == "1":
+       print("I guess you should listen to your examiner. GAME OVER")
+       game_over()
+    elif result == "2":
+        print("Good job. You pass.")
 
 
 select_car()
