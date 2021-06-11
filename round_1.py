@@ -5,7 +5,7 @@ def start_game():
 
     def play_again():
         print("Would you like to try again, y/n?")
-        answer = input()
+        answer = input().lower()
         if "y" in answer:
             start_game()
         elif "n" in answer:
@@ -51,10 +51,76 @@ def start_game():
                 )
 
     elif "2" in choice:
-        print("You win")
+        print(
+            "You approach the front door, seeing no one else around, and take your place in front of the doors. After a minute of waiting, a man comes and unlocks the door. Thank goodness you didn't have to wait long! You walk inside and somehow, some way, there is a line of 20 people in front of you. Where did they come from? This is outrageous! Do you\n 1. Take your place in line and wait\n 2. Sneak your way up front and cut in line to be next"
+        )
+
+        choice = input()
+
+        if "1" in choice:
+            print(
+                "You accept your lot in life and take your place at the end of the line. After waiting for hours, you finally get to the front and the lady looks you dead in the eye and says 'I'm sorry, but we are now closing for the day. Gas leak. You'll have to come again tomorrow."
+            )
+            game_over()
+
+        elif "2" in choice:
+            print(
+                "You sneak your way up front and do the old tap the person on the shoulder so they look the other way and slide on in to the line. It worked! Between your sneaking and lock picking skills, maybe you should consider being a rogue. You approach the lady behind the counter and she looks at your beaming face. 'Let me guess. Here for your drivers license test? Well you are in for a surprise. Follow me for the written part of your test' You follow her to a back room where she leads you to a computer. You sit down to take the test.\n Question 1:\n You pull up to a red light. A car pulls up next to you and revs it's engine, obviously looking for an impromptu race. How do you respond?\n 1. Put on your driving gloves and get ready to take off as soon as the light hits green\n 2. Ignore the car next to you and stick to driving according to the law\n 3. Slam the car in reverse and run!"
+            )
+
+            choice = input()
+
+            if "1" in choice:
+                print(
+                    "Doesn't matter if you win by an inch or a mile, winning is winning. And you are a winner! Next question. Pick the object that is not like the other?\n 1. Car\n 2. Truck\n 3. Dandelion"
+                )
+
+                choice = input()
+
+                if "1" in choice:
+                    print(
+                        "Really? You must be joking. If you can't take this seriously, no license for you!"
+                    )
+                    game_over()
+                elif "2" in choice:
+                    print(
+                        "You must have clicked the wrong button. This was supposed to be easy!"
+                    )
+                    game_over()
+                elif "3" in choice:
+                    print(
+                        "You passed! Were you expecting more questions? Now head outside for the driving portion of your test."
+                    )
+
+            elif "2" in choice:
+                print(
+                    "Good job! Next question. Pick the object that is not like the other?\n 1. Car\n 2. Truck\n 3. Dandelion"
+                )
+
+                choice = input()
+
+                if "1" in choice:
+                    print(
+                        "Really? You must be joking. If you can't take this seriously, no license for you!"
+                    )
+                    game_over()
+                elif "2" in choice:
+                    print(
+                        "You must have clicked the wrong button. This was supposed to be easy!"
+                    )
+                    game_over()
+                elif "3" in choice:
+                    print(
+                        "You passed! Were you expecting more questions? Now head outside for the driving portion of your test."
+                    )
+
+            elif "3" in choice:
+                print("You slammed into the car behind you. You fail.")
+                game_over()
+
     elif "3" in choice:
         print(
-            "You walk towards the back of the building, seeing no one in sight. As you turn the corner, you see a door at the rear entrance. Maybe it's unlocked! As you head towards the door, you hear a growl to your left. You turn to the source of the noise and see a pack of 5 wolves glaring at you.\n What do you do now?\n 1. Fight! Wolves are no match for you!\n 2.Run! You didn't sign up for this!"
+            "You walk towards the back of the building, seeing no one in sight. As you turn the corner, you see a door at the rear entrance. Maybe it's unlocked! As you head towards the door, you hear a growl to your left. You turn to the source of the noise and see a pack of 5 wolves glaring at you.\n What do you do now?\n 1. Fight! Wolves are no match for you!\n 2. Run! You didn't sign up for this!"
         )
 
         choice = input()
