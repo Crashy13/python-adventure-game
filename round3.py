@@ -227,7 +227,7 @@ def round3():
             What do you do???
 
             1. You're in your best suit (always gotta be lookin' fly!),
-                he's gotta be kidding if he thinks you're gonna get that sweat!!
+                he's gotta be kidding if he thinks you're gonna get that sweaty!!
                 Nope. No way. You get on the bus that just pulled up,
                 and ride away from this nightmare! Taking the bus forever ain't so bad...
 
