@@ -9,13 +9,27 @@ def play_again():
         print("Please enter y for yes or n for no")
         play_again()
 
+
 def game_over():
-        print("Game over!")
+    print("Game over!")
+    play_again()
+
+
+def play_again():
+    print("Would you like to try again, y/n?")
+    answer = input()
+    if "y" in answer:
+        start_game()
+    elif "n" in answer:
+        exit()
+    else:
+        print("Please enter y for yes or n for no")
         play_again()
 
 
 def find_cell_phone():
-    print("""You start running away from the car, once it's out of sight,
+    print(
+        """You start running away from the car, once it's out of sight,
             you start looking for signs of life! \U0001F9D0
             Where are all the people when you need them?!
 
@@ -34,12 +48,14 @@ def find_cell_phone():
 
             1. The Old Lady
             2. The Hippie
-            """)
+            """
+    )
 
     answer = input()
 
     if "1" in answer:
-        print("""You approach the old lady, and ask her if she has a cell phone that you
+        print(
+            """You approach the old lady, and ask her if she has a cell phone that you
                 could use.
 
                 "Aren't you precious!" she says. "Of course I have a cell phone,
@@ -57,11 +73,13 @@ def find_cell_phone():
 
                 "You're not on a payphone, you're on my grandmother's cellphone.
                 You FAIL!"
-            """)
+            """
+        )
         game_over()
 
     elif "2" in answer:
-        print("""You approach the hippie, and ask him if he has a cell phone that you
+        print(
+            """You approach the hippie, and ask him if he has a cell phone that you
                 could use.
 
                 "You kidding me?" she says. "Of course I have a cell phone,
@@ -75,11 +93,14 @@ def find_cell_phone():
                 "Talk to me," your examiner answers.
 
                 "Bob, it's me. I found a payphone. Mission accomplished, right?"
-                """)
+                """
+        )
         gas_station()
 
+
 def gas_station():
-    print("""Well done kid," he says, "you have 2 minutes and 38 seconds
+    print(
+        """Well done kid," he says, "you have 2 minutes and 38 seconds
             to be back in the driver's seat"
 
             You hang up the phone and take off running! \U0001F3C3
@@ -91,10 +112,13 @@ def gas_station():
             You start the engine, and he says to you,
             "We need to get gas, pull over at the gas station 2 miles up on the left."
             "You pull into the gas station and park the car..."
-            """)
+            """
+    )
+
 
 def find_pay_phone():
-    print("""You take off running!
+    print(
+        """You take off running!
                 Your belly starts to rumble... uh oh...
                 Maybe the Cheetos you had for breakfast weren't a good idea... \U0001F922
 
@@ -110,11 +134,13 @@ def find_pay_phone():
 
                 2. NOPE! Not gonna risk it, I'm finding a bathroom!
                     I don't mind being chaueffered around the rest of my life...
-        """)
+        """
+    )
     answer = input()
 
     if "1" in answer:
-        print("""...\U0001F3C3 ...\U0001F3C3 ...\U0001F3C3 ...
+        print(
+            """...\U0001F3C3 ...\U0001F3C3 ...\U0001F3C3 ...
                     Like an oasis in the dessert,
                     You see in the distance what appears to be a payphone!
 
@@ -140,30 +166,37 @@ def find_pay_phone():
 
                     2. You start searching on the ground.
                         Someone at some point had to have dropped a coin, right???
-            """)
+            """
+        )
 
         answer = input()
 
         if "1" in answer:
-                print("""You run up to the old lady, and ask her if she has a quarter
+            print(
+                """You run up to the old lady, and ask her if she has a quarter
                             she can spare! She starts laughing!
                             "Does anyone even carry coins anymore?
                             I only use Apple Pay! Sorry kid...
-                """)
-                game_over()
+                """
+            )
+            game_over()
         elif "2" in answer:
-                print("""You start searching for dropped coins,
+            print(
+                """You start searching for dropped coins,
                 then out of the corner of your eye you notice a worn sticker
                  on the payphone that says,
                  "1-800-COLLECT."
 
-                You punch in the number. The examiner accepts the collect call.""")
-                gas_station()
+                You punch in the number. The examiner accepts the collect call."""
+            )
+            gas_station()
     elif "2" in answer:
         game_over()
 
+
 def round3():
-    print("""You're pulled over at the bus stop... \U0001F68C \U0001F6D1
+    print(
+        """You're pulled over at the bus stop... \U0001F68C \U0001F6D1
             Your \U0001F49B starts to race! Did you fail the test?
             Why did he tell you to pull over? \U0001F633
 
@@ -204,7 +237,8 @@ def round3():
             3. Do payphones even exist any more?? How old is this dude?
                 You scan the scene... there's gotta be someone not too far away
                 with a cell phone you can borrow and pretend it's a pay phone.
-            """)
+            """
+    )
     answer = input()
 
     if "1" in answer:
@@ -215,5 +249,6 @@ def round3():
         find_cell_phone()
     else:
         game_over()
+
 
 round3()
