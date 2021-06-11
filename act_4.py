@@ -136,35 +136,47 @@ def back_at_the_DMV():
     [3] You take a gamble, give a laugh and tell him that was a good joke."""
     )
 
-    choice = input("1/2/3?")
+    main_choice = [
+        {
+            1: "You accept your fate, walk away hanging your head, and try again in who knows how long. The DMV is a nightmare.",
+            2: "Enraged, you tell that man he's gonna reconsider what he just said for his and your own health (probably not the best idea, but people do lots of crazy things when they're mad).",
+            3: "You take a gamble, give a laugh and tell him that was a good joke.",
+        }
+    ]
 
+
+for i in main_choice:
+    for key, value in i.items():
+        print(f"{key}-{value}")
+main_choice_input = input("1/2/3?")
+if main_choice_input == 1:
+    slowprint(
+        """You really just picked that to start over, and I don't know if I respect it, or hate it. Either way,"""
+    )
+    game_over()
+elif main_choice_input == 2:
+    choice_two_intro = "Mr. Brown is not impressed with your spunk, and tells you to take a hike before you get hurt. You now have two choices. "
+    secondary_choice = [
+        {
+            1: "You tell him to bring it outside and find out who's really gonna get hurt. You're really hoping he doesn't call your bluff.",
+            2: "Bluff a recording on your phone of him threatening you, and blackmail him into giving you your license.",
+        }
+    ]
+    slowprint(choice_two_intro)
+    for i in secondary_choice:
+        for key, value in i.items():
+            print(f"{key}-{value}")
+    secondary_choice_input = input("1/2?")
     if "1" in choice:
         slowprint(
-            """You really just picked that to start over, and I don't know if I respect it, or hate it. Either way,"""
+            """He calls your bluff. To make a long story short, you didn't get your license."""
         )
         game_over()
-
     elif "2" in choice:
         slowprint(
-            """Mr. Brown is not impressed with your spunk, and tells you to take a hike before you get hurt. You now have two choices. \n
-        [1] You tell him to bring it outside and find out who's really gonna get hurt. You're really hoping he doesn't call your bluff. \n
-        [2] Bluff a recording on your phone of him threatening you, and blackmail him into giving you your license."""
+            """He takes the bait, grumbling about it, but obliges to your demands. Congratulations! Don't kill anyone."""
         )
-
-        choice = input("1/2?")
-
-        if "1" in choice:
-            slowprint(
-                """He calls your bluff. To make a long story short, you didn't get your license."""
-            )
-            game_over()
-
-        elif "2" in choice:
-            slowprint(
-                """He takes the bait, grumbling about it, but obliges to your demands. Congratulations! Don't kill anyone."""
-            )
-            play_again()
-
+        play_again()
     elif "3" in choice:
         slowprint(
             """He looks at you sternly, tells you it wasn't a joke, and to go home. But you're not finished yet. You give it another attempt. And, oddly enough, Mr. Brown starts booming laughing, and says he almost had you. He gives you a ticket for the camera line. You've successfully gotten your driver's license. Congratulations!"""
