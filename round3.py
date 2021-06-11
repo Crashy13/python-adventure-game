@@ -1,22 +1,27 @@
 def game_over():
-        print("Game over!")
-        play_again()
-    def play_again():
-        print("Would you like to try again, y/n?")
-        answer = input()
-        if "y" in answer:
-            start_game()
-        elif "n" in answer:
-            exit()
-        else:
-            print("Please enter y for yes or n for no")
-            play_again()
+    print("Game over!")
+    play_again()
 
-def find_pay_phone()
+
+def play_again():
+    print("Would you like to try again, y/n?")
+    answer = input()
+    if "y" in answer:
+        start_game()
+    elif "n" in answer:
+        exit()
+    else:
+        print("Please enter y for yes or n for no")
+        play_again()
+
+
+def find_pay_phone():
     print("")
 
+
 def round3():
-    print("""You're pulled over at the bus stop...
+    print(
+        """You're pulled over at the bus stop...
             Your hear starts to race! Did you fail the test? Why did he tell you to pull over?
             'Get out of the car,' he says to you. Uh oh... (insert crickets emoji)
 
@@ -36,13 +41,16 @@ def round3():
 
             'What are you waiting for?!' he shouts, sounding like a drill sargeant.
 
-            """)
-    answer = input("""
+            """
+    )
+    answer = input(
+        """
                         What are you going to do?
                         Op 1:
                         Op: 2
                         Op3:..
-                        """)
+                        """
+    )
     if "1" in answer:
         gameover()
     elif "2" in answer:
@@ -51,5 +59,6 @@ def round3():
         find_cell_phone()
     else:
         gameover()
+
 
 round3()

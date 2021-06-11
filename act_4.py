@@ -16,4 +16,7 @@ slowprint(
 [3] Tell the examiner (they) are going to pay since they volunteered you for so much driving."""
 )
 
-user_dec = input("1/2/3/4?")
+choice = input("1/2/3?")
+
+if '1' in choice:
+    
