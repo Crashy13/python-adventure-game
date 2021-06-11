@@ -1,4 +1,13 @@
+import sys
+import time
+
 car = ""
+
+def slowprint(s):
+        for c in s + "\n":
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            time.sleep(1.0 / 20)
 
 def game_over():
         print("Game over!")
@@ -16,12 +25,15 @@ def play_again():
         play_again()
 
 def select_car():
-    result = input('''
+    slowprint('''
     Okay, then! Now you have to do something really cool.
     You can choose your car!
     Choose your car:
-    1.Porshe, 2.BW1918, 3.Tandem bicycle
+    1.Porshe
+    2.BW1918
+    3.Tandem bicycle
     ''')
+    result = input()
 
     if result == "1":
         print("What can I say. You have an expensive taste. Good work")
@@ -34,30 +46,33 @@ def select_car():
 
 
 def introduce_yourself():
-    result = input('''This is really important part.
+    slowprint('''
+     This is really important part.
      You should make a first impression.
      You instructor is really interesting man.
-      1.Hi, I am an octopus man,
-      2.Hi, my name is Rick and I have only one testicle. Do I need two to drive,
+      1.Hi, I am an octopus man
+      2.Hi, my name is Rick and I have only one testicle. Do I need two to drive
       3.Hi, I am Rick. How are you doing today''')
+    result = input()
 
     if result == "1":
         print("Ha... Who would known. Your examiner loves Rick and Morty show. You made him laugh and know you have some good bond. Good Job!")
     elif result == "2":
         print("Hmmm... You made a really interesting impression on your examiner. He laught but you can see that he got a little bit confused, and maybe even concerned")
     elif result == "3":
-           print("REALLY BORING! But it how it goes. You made FINE impression. NICE(boring)")
+        print("REALLY BORING! But it how it goes. You made FINE impression. NICE(boring)")
 
     make_a_joke()
 
 def make_a_joke():
-    result = input('''You finally got inside the car.
+    slowprint('''You finally got inside the car.
      You strapped in and starded the car.
       Suddenly you felt a very unpleasant smell.Oh, your examiner farted.
       Ops. Now, what are you going to do about it?
       1.You can make a stupid joke as "oh, geez... isn't to early for P.F Chang's,
       2. You can roll down your window,
       3.Just ignor it''')
+    result = input()
 
     if result == "1":
         print("That was BAD! You just made the situation worse...Examiner blocked the windows and now you have to drive in this smelly car")
@@ -69,7 +84,8 @@ def make_a_joke():
     first_light()
 
 def first_light():
-    result = input('''Good.
+    slowprint('''
+     Good.
      Now you are finally driving.
      Your first task is red light.
      What can possibly go wrong, right?
@@ -80,6 +96,7 @@ def first_light():
      2.You hit gas and you skip the red light to say hi to Leonardo Dicaprio because you a BIG fan
      3.You open a door of your car and just run to him with open arms
      4.You are being passiont. You just wait until green light and then you drive to Leonardo''')
+    result = input()
 
     if result == "1":
          print("WHAT? How? WHAT? Okay, this is just ridiculous! GAME OVER just from me")
@@ -95,10 +112,13 @@ def first_light():
     stop_at_the_bus_station()
 
 def stop_at_the_bus_station():
-    result = input('''You are driving by a bus station and your examiner asks you to stop there. Your action?
+    slowprint('''
+    You are driving by a bus station and your examiner asks you to stop there.
+    Your action?
     1. You do stop
     2. You don't stop
     ''')
+    result = input()
 
     if result == "1":
        print("I guess you should listen to your examiner. GAME OVER")
