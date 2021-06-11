@@ -1,6 +1,17 @@
 import sys
 import time
 
+player_name = input("What is your name?:")
+
+class Player:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+player = Player(player_name)
+
 def start_game():
 
     def slowprint(s):
@@ -26,7 +37,7 @@ def start_game():
 
 
     sections = {
-        'front': {'text': "It's finally the big day! Time to get your driver's license! You were so excited last night you hardly slept, but you've been preparing for this day all your life. As your older brother drives you up to the DMV, you notice that it says it opens at 8 am, but it's now 8:05 and the doors are still locked!\n You can choose to\n 1. Attempt to break in...\n 2. Wait patiently\n 3. Check the back door\n 4. Curse your luck and go home\n What do you do?"},
+        'front': {'text': f"{player_name}, it's finally the big day! Time to get your driver's license! You were so excited last night you hardly slept, but you've been preparing for this day all your life. As your older brother drives you up to the DMV, you notice that it says it opens at 8 am, but it's now 8:05 and the doors are still locked!\n You can choose to\n 1. Attempt to break in...\n 2. Wait patiently\n 3. Check the back door\n 4. Curse your luck and go home\n What do you do?"},
 
         'side': {'text': "You approach the side and see a window. You try and open it, but it appears to be locked. You look around for anything to help and you see a brick laying on the ground. You figure you have only 2 options.\n What do you do?\n 1. Pick up the brick and throw it through the window.\n 2. Try and pick the lock and open the window."},
 
