@@ -6,38 +6,22 @@ def slowprint(s):
     for c in s + "\n":
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(1.0 / 20)
-
-
-def play_again():
-    print("Would you like to try again, y/n?")
-    answer = input()
-    if "y" in answer:
-        start_game()
-    elif "n" in answer:
-        exit()
-    else:
-        print("Please enter y for yes or n for no")
-        play_again()
-
+        time.sleep(1.0 / 200)
 
 def game_over():
     print("Game over!")
     play_again()
 
-
 def play_again():
-    print("Would you like to try again, y/n?")
-    answer = input()
+    print("Would you like to try again from your last save point?, y/n?")
+    answer = input().lower()
     if "y" in answer:
-        start_game()
+        gas_station_shenanigans()
     elif "n" in answer:
         exit()
     else:
         print("Please enter y for yes or n for no")
         play_again()
-
-
 #############################################
 
 
@@ -186,3 +170,5 @@ def back_at_the_DMV():
             """He looks at you sternly, tells you it wasn't a joke, and to go home. But you're not finished yet. You give it another attempt. And, oddly enough, Mr. Brown starts booming laughing, and says he almost had you. He gives you a ticket for the camera line. You've successfully gotten your driver's license. Congratulations!"""
         )
         play_again()
+
+gas_station_shenanigans()

@@ -1,28 +1,28 @@
 import sys
 import time
 
-car = ""
 
 def slowprint(s):
-        for c in s + "\n":
-            sys.stdout.write(c)
-            sys.stdout.flush()
-            time.sleep(1.0 / 20)
+    for c in s + "\n":
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(1.0 / 200)
 
 def game_over():
-        print("Game over!")
-        play_again()
+    print("Game over!")
+    play_again()
 
 def play_again():
-    print("Would you like to try again, y/n?")
-    answer = input()
+    print("Would you like to try again from your save point?, y/n?")
+    answer = input().lower()
     if "y" in answer:
-        start_game()
+        select_car()
     elif "n" in answer:
         exit()
     else:
         print("Please enter y for yes or n for no")
         play_again()
+
 
 def select_car():
     slowprint('''
@@ -51,7 +51,7 @@ def introduce_yourself():
      You should make a first impression.
      You instructor is really interesting man.
       1.Hi, I am an octopus man
-      2.Hi, my name is Rick and I have only one testicle. Do I need two to drive
+      2.Hi, my name is Rick.
       3.Hi, I am Rick. How are you doing today''')
     result = input()
 
@@ -66,12 +66,12 @@ def introduce_yourself():
 
 def make_a_joke():
     slowprint('''You finally got inside the car.
-     You strapped in and starded the car.
+     You strapped in and started the car.
       Suddenly you felt a very unpleasant smell.Oh, your examiner farted.
       Ops. Now, what are you going to do about it?
       1.You can make a stupid joke as "oh, geez... isn't to early for P.F Chang's,
       2. You can roll down your window,
-      3.Just ignor it''')
+      3.Just ignore it''')
     result = input()
 
     if result == "1":
@@ -95,7 +95,7 @@ def first_light():
      1.You don't who he is and just stop at the red light
      2.You hit gas and you skip the red light to say hi to Leonardo Dicaprio because you a BIG fan
      3.You open a door of your car and just run to him with open arms
-     4.You are being passiont. You just wait until green light and then you drive to Leonardo''')
+     4.You are being patient. You just wait until green light and then you drive to Leonardo''')
     result = input()
 
     if result == "1":
@@ -105,7 +105,7 @@ def first_light():
         print("Okay, it wasn't the best choice because you ran over a grandma who was crossing the road. Too much... Sorry. GAME OVER")
         game_over()
     elif result == "3":
-        print("interesting. You left your instructor alone in the car. BUT! Do you remember that your examiner is an interestingman? Because something crazy happened. He ran to hug Leo with you. After hugging Leo, you just went back to the car with big smiles. Good work")
+        print("interesting. You left your instructor alone in the car. BUT! Do you remember that your examiner is an interesting man? Because something crazy happened. He ran to hug Leo with you. After hugging Leo, you just went back to the car with big smiles. Good work")
     elif result == "4":
         print("Well. That is a good decision but you miss Leo and now you are sad. Anyway, you pass")
 
@@ -121,10 +121,10 @@ def stop_at_the_bus_station():
     result = input()
 
     if result == "1":
-       print("I guess you should listen to your examiner. GAME OVER")
-       game_over()
+       print("Good job! You pass!")
     elif result == "2":
-        print("Good job. You pass.")
+        print("I guess you should listen to your examiner. GAME OVER")
+        game_over()
 
 
 select_car()

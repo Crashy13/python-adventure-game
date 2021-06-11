@@ -1,42 +1,28 @@
 import sys
 import time
 
-examiner = {"first_name": "Bob", "last_name": "Brown", "occupation": "Driver's License Examiner", "phone_number": "555-555-5555"}
-
 def slowprint(s):
     for c in s + "\n":
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(1.0 / 20)
-
-def play_again():
-    print("Would you like to try again, y/n?")
-    answer = input()
-    if "y" in answer:
-        start_game()
-    elif "n" in answer:
-        exit()
-    else:
-        print("Please enter y for yes or n for no")
-        play_again()
-
+        time.sleep(1.0 / 200)
 
 def game_over():
     print("Game over!")
     play_again()
 
-
 def play_again():
-    print("Would you like to try again, y/n?")
-    answer = input()
+    print("Would you like to try again from your last save point?, y/n?")
+    answer = input().lower()
     if "y" in answer:
-        start_game()
+        round3()
     elif "n" in answer:
         exit()
     else:
         print("Please enter y for yes or n for no")
         play_again()
 
+examiner = {"first_name": "Bob", "last_name": "Brown", "occupation": "Driver's License Examiner", "phone_number": "555-555-5555"}
 
 def find_cell_phone():
     slowprint("""You start running away from the car, once it's out of sight,

@@ -2,11 +2,12 @@ import sys
 import time
 
 def start_game():
+
     def slowprint(s):
         for c in s + "\n":
             sys.stdout.write(c)
             sys.stdout.flush()
-            time.sleep(1.0 / 20)
+            time.sleep(1.0 / 200)
 
     def game_over():
         print("Game over!")
@@ -33,9 +34,9 @@ def start_game():
 
         'pick_lock': {'text': "You approach the window and see a lockpick set laying on the sill. What a lucky break to advance the story! You pick it up and with nimble fingers and dexterity you never knew you had, you manage to get the window unlocked and open. You crawl your way in and see you're in a dark room. As your vision adjusts to the low light, you see a desk in front of you. On the desk there seems to be a stack of papers. When you look at the top page, it looks like you found the answer to the written driver's test! What a miracle! You scan the pages quickly and are able to retain all the information with your photo memory which seems like another convenient plot device. As you finish reading it, you hear the door begin to open! Do you\n 1. Hide under the desk\n 2. Stand firm and see what happens"},
 
-        'hide': {'text': "Too late! The door opens as a woman sees you in the middle of the room. 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Now head outside for the driving portion of the test."},
+        'hide': {'text': "Too late! The door opens as a woman sees you in the middle of the room. 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Save point reached! Now head outside for the driving portion of the test."},
 
-        'stand': {'text': "The door opens as a woman sees you in the middle of the room. Before you can act, she says 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Now head outside for the driving portion of the test."},
+        'stand': {'text': "The door opens as a woman sees you in the middle of the room. Before you can act, she says 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Save point reached! Now head outside for the driving portion of the test."},
 
         'line': {'text': 'You approach the front door, seeing no one else around, and take your place in front of the doors. After a minute of waiting, a man comes and unlocks the door. Thank goodness you didn\'t have to wait long! You walk inside and somehow, some way, there is a line of 20 people in front of you. Where did they come from? This is outrageous! Do you\n 1. Take your place in line and wait\n 2. Sneak your way up front and cut in line to be next'},
 
@@ -49,7 +50,7 @@ def start_game():
 
         'truck_answer': {'text': "You must have clicked the wrong button. This was supposed to be easy!"},
 
-        'dandelion_answer': {'text': "You passed! Were you expecting more questions? Now head outside for the driving portion of your test."},
+        'dandelion_answer': {'text': "You passed! Were you expecting more questions? Save point reached! Now head outside for the driving portion of your test."},
 
         'ignore_car': {'text': "Good job! Next question. Pick the object that is not like the others?\n 1. Car\n 2. Truck\n 3. Dandelion"},
 
@@ -61,7 +62,7 @@ def start_game():
 
         'run_wolves': {'text': "Some may call you a coward, but you survived. Good thing they decided not to chase you for reasons you'll never know because it wasn't written in the script. As you come back around to the front, you notice that the doors are open. Maybe waiting would have been the safer choice. As you walk into the building, the man at the front desk greets you with a warm smile. He leads you to the back and hands you a paper and pencil. You sit down and look at the test.\nQuestion 1:\n How many tires does a normal car have?\n 1. 2\n 2. 4\n 3. 3\n 4. 1"},
 
-        'pass_test': {'text': "Great job! You passed! Now go outside for the driving portion of the test."},
+        'pass_test': {'text': "Great job! You passed! Save point reached! Now go outside for the driving portion of the test."},
 
         'fail_test': {'text': "Come on, this is basic knowledge anyone should know."},
 
@@ -72,115 +73,115 @@ def start_game():
     current_section = sections['front']
 
     while True:
-        print(sections['front']['text'])
+        slowprint(sections['front']['text'])
 
         choice = input()
 
         if choice == choices[0]:
-            print(sections['side']['text'])
+            slowprint(sections['side']['text'])
 
             choice = input()
 
             if choice == choices[0]:
-                print(sections['brick']['text'])
+                slowprint(sections['brick']['text'])
                 game_over()
                 break
 
             elif choice == choices[1]:
-                print(sections['pick_lock']['text'])
+                slowprint(sections['pick_lock']['text'])
 
                 choice = input()
 
                 if choice in choices[0]:
-                    print(sections['hide']['text'])
+                    slowprint(sections['hide']['text'])
                     break
 
                 elif choice in choices[1]:
-                    print(sections['stand']['text'])
+                    slowprint(sections['stand']['text'])
                     break
 
                 else:
-                    print("Please choose a choice provided")
+                    slowprint("Please choose a choice provided")
 
 
         elif choice == choices[1]:
-            print(sections['line']['text'])
+            slowprint(sections['line']['text'])
 
             choice = input()
 
             if choice == choices[0]:
-                print(sections['wait']['text'])
+                slowprint(sections['wait']['text'])
                 game_over()
                 break
 
             elif choice == choices[1]:
-                print(sections['sneak']['text'])
+                slowprint(sections['sneak']['text'])
 
                 choice = input()
 
                 if choice == choices[0]:
-                    print(sections['race_car']['text'])
+                    slowprint(sections['race_car']['text'])
 
                     choice = input()
 
                     if choice == choices[0]:
-                        print(sections['car_answer']['text'])
+                        slowprint(sections['car_answer']['text'])
                         game_over()
                         break
 
                     elif choice == choices[1]:
-                        print(sections['truck_answer']['text'])
+                        slowprint(sections['truck_answer']['text'])
                         game_over()
                         break
 
                     elif choice == choices[2]:
-                        print(sections['dandelion_answer']['text'])
+                        slowprint(sections['dandelion_answer']['text'])
                         break
 
                 elif choice == choices[1]:
-                    print(sections['ignore_car']['text'])
+                    slowprint(sections['ignore_car']['text'])
 
                     choice = input()
 
                     if choice == choices[0]:
-                        print(sections['car_answer']['text'])
+                        slowprint(sections['car_answer']['text'])
                         game_over()
                         break
 
                     elif choice == choices[1]:
-                        print(sections['truck_answer']['text'])
+                        slowprint(sections['truck_answer']['text'])
                         game_over()
                         break
 
                     elif choice == choices[2]:
-                        print(sections['dandelion_answer']['text'])
+                        slowprint(sections['dandelion_answer']['text'])
                         break
 
                 elif choice == choices[2]:
-                    print(sections['reverse_car']['text'])
+                    slowprint(sections['reverse_car']['text'])
                     game_over()
                     break
 
         elif choice == choices[2]:
-            print(sections['back']['text'])
+            slowprint(sections['back']['text'])
 
             choice = input()
 
             if choice == choices[0]:
-                print(sections['fight_wolves']['text'])
+                slowprint(sections['fight_wolves']['text'])
                 game_over()
                 break
 
             elif choice == choices[1]:
-                print(sections['run_wolves']['text'])
+                slowprint(sections['run_wolves']['text'])
 
                 choice = input()
                 if choice == choices[1]:
-                    print(sections['pass_test']['text'])
+                    slowprint(sections['pass_test']['text'])
                     break
 
                 else:
-                    print(sections['fail_test']['text'])
+                    slowprint(sections['fail_test']['text'])
                     game_over()
                     break
 
@@ -188,12 +189,11 @@ def start_game():
 
 
         elif choice == choices[3]:
-            print(sections['give_up']['text'])
+            slowprint(sections['give_up']['text'])
             game_over()
             break
 
         else:
             print("Choose one of the options provided")
-
 
 start_game()
