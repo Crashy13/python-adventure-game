@@ -1,3 +1,4 @@
+import game
 import sys
 import time
 
@@ -128,6 +129,7 @@ def find_pay_phone():
 
 
 def round3():
+    new_player = Player()
     slowprint("""You're pulled over at the bus stop... \U0001F68C \U0001F6D1
     Your \U0001F49B starts to race! Did you fail the test?
     Why did he tell you to pull over? \U0001F633
