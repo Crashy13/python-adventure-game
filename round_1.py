@@ -1,5 +1,6 @@
 def start_game():
 
+
     def game_over():
         print("Game over!")
         play_again()
@@ -35,11 +36,18 @@ def start_game():
 
             choice = input()
 
+
             if '1' in choice:
                 print("Too late! The door opens as a woman sees you in the middle of the room. 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Now head outside for the driving portion of the test.")
 
+
             elif '2' in choice:
                 print("The door opens as a woman sees you in the middle of the room. Before you can act, she says 'What are you doing in here? Looking for the bathroom I presume? Follow me right this way.' You follow the woman as she leads you to where the restrooms are. After she walks away, you find your way to the front. The kind lady at the desk escorts you back to take the written test which you ace no problem with all of the answers in your head. Great job! Now head outside for the driving portion of the test.")
+
+
+            else:
+                print("Please choose a choice provided")
+
 
     elif '2' in choice:
         print('You approach the front door, seeing no one else around, and take your place in front of the doors. After a minute of waiting, a man comes and unlocks the door. Thank goodness you didn\'t have to wait long! You walk inside and somehow, some way, there is a line of 20 people in front of you. Where did they come from? This is outrageous! Do you\n 1. Take your place in line and wait\n 2. Sneak your way up front and cut in line to be next')
@@ -56,30 +64,34 @@ def start_game():
             choice = input()
 
             if '1' in choice:
-                print("Doesn't matter if you win by an inch or a mile, winning is winning. And you are a winner! Next question. Pick the object that is not like the other?\n 1. Car\n 2. Truck\n 3. Dandelion")
+                print("Doesn't matter if you win by an inch or a mile, winning is winning. And you are a winner! Next question. Pick the object that is not like the others?\n 1. Car\n 2. Truck\n 3. Dandelion")
 
                 choice = input()
 
                 if '1' in choice:
                     print("Really? You must be joking. If you can't take this seriously, no license for you!")
                     game_over()
+
                 elif '2' in choice:
                     print("You must have clicked the wrong button. This was supposed to be easy!")
                     game_over()
+
                 elif '3' in choice:
                     print("You passed! Were you expecting more questions? Now head outside for the driving portion of your test.")
 
             elif '2' in choice:
-                print("Good job! Next question. Pick the object that is not like the other?\n 1. Car\n 2. Truck\n 3. Dandelion")
+                print("Good job! Next question. Pick the object that is not like the others?\n 1. Car\n 2. Truck\n 3. Dandelion")
 
                 choice = input()
 
                 if '1' in choice:
                     print("Really? You must be joking. If you can't take this seriously, no license for you!")
                     game_over()
+
                 elif '2' in choice:
                     print("You must have clicked the wrong button. This was supposed to be easy!")
                     game_over()
+
                 elif '3' in choice:
                     print("You passed! Were you expecting more questions? Now head outside for the driving portion of your test.")
 
@@ -95,23 +107,28 @@ def start_game():
         if '1' in choice:
             print("Seriously, you thought you could take on 5 wolves? You've severely overestimated your skills.")
             game_over()
+
         elif '2' in choice:
             print("Some may call you a coward, but you survived. Good thing they decided not to chase you for reasons you'll never know because it wasn't written in the script. As you come back around to the front, you notice that the doors are open. Maybe waiting would have been the better choice. As you walk into the building, the man at the front desk greets you with a warm smile. He leads you to the back and hands you a paper and pencil. You sit down and look at the test.\nQuestion 1:\n How many tires does a normal car have?\n 1. 2\n 2. 4\n 3. 3\n 4. 1")
 
             choice = input()
             if '2' in choice:
                  print("Great job! You passed! Now go outside for the driving portion of the test.")
+
             else:
                 print("Come on, this is basic knowledge anyone should know.")
                 game_over()
 
 
 
+
     elif '4' in choice:
         print("This must be a sign that you aren't ready. Better go back home and keep on practicing.")
         game_over()
+
     else:
         print("Choose one of the options provided")
+
 
 
 
