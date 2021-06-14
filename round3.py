@@ -6,7 +6,7 @@ def round3():
         for c in s + "\n":
             sys.stdout.write(c)
             sys.stdout.flush()
-            time.sleep(1.0 / 200)
+            time.sleep(1.0 / 60)
 
     def game_over():
         print("Game over!")
